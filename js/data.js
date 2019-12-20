@@ -1,6 +1,6 @@
 "use strict";
 
-const posts = [
+const posts    = [
     // {
     //     author: {
     //         name: 'John',
@@ -17,9 +17,9 @@ const posts = [
     // },
     {
         author: {
-            name: 'John',
+            name: 'Boy',
             surname: 'Dear',
-            img: 'john-dear.jpg',
+            img: 'boy.png',
             link: '#'
         },
         time: 1576592401104,
@@ -29,9 +29,9 @@ const posts = [
     },
     {
         author: {
-            name: 'John',
+            name: 'Jimin',
             surname: 'Dear',
-            img: 'john-dear.jpg',
+            img: 'Jimin.jpg',
             link: '#'
         },
         time: 1576592401104,
@@ -41,9 +41,9 @@ const posts = [
     },
     {
         author: {
-            name: 'John',
+            name: 'Jimin',
             surname: 'Dear',
-            img: 'john-dear.jpg',
+            img: 'Jimin.jpg',
             link: '#'
         },
         time: 1576592401104,
@@ -54,9 +54,9 @@ const posts = [
     },
     {
         author: {
-            name: 'John',
+            name: 'Lucy',
             surname: 'Dear',
-            img: 'john-dear.jpg',
+            img: 'Lucy.jpg',
             link: '#'
         },
         time: 1576592401104,
@@ -67,9 +67,9 @@ const posts = [
     },
     {
         author: {
-            name: 'John',
+            name: 'Boy',
             surname: 'Dear',
-            img: 'john-dear.jpg',
+            img: 'Boy.png',
             link: '#'
         },
         time: 1576592401104,
@@ -80,9 +80,9 @@ const posts = [
     },
     {
         author: {
-            name: 'John',
+            name: 'Megan',
             surname: 'Dear',
-            img: 'john-dear.jpg',
+            img: 'Megan.png',
             link: '#'
         },
         time: 1576592401104,
@@ -93,9 +93,9 @@ const posts = [
     },
     {
         author: {
-            name: 'John',
+            name: 'Tim',
             surname: 'Dear',
-            img: 'john-dear.jpg',
+            img: 'Tim.png',
             link: '#'
         },
         time: 1576592401104,
@@ -106,21 +106,43 @@ const posts = [
     },
     {
         author: {
-            name: 'John',
+            name: 'Lucy',
             surname: 'Dear',
-            img: 'john-dear.jpg',
+            img: 'Lucy.jpg',
             link: '#'
         },
         time: 1576592401104,
         content: {
-            text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+            text: 'Lorem ipsum dolor sit amet.'
         }
     },
     {
         author: {
-            name: 'John',
+            name: 'Megan',
             surname: 'Dear',
-            img: 'john-dear.jpg',
+            img: 'Megan.png',
+            link: '#'
+        },
+        time: 1576592401104,
+        content: {
+            text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+            background: 'red'
+        },
+        author: {
+            name: 'Tim',
+            surname: 'Dear',
+            img: 'Tim.png',
+            link: '#'
+        },
+        time: 1576592401104,
+        content: {
+            text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+            background: 'blue'
+        },
+        author: {
+            name: 'Boy',
+            surname: 'Dear',
+            img: 'Boy.png',
             link: '#'
         },
         time: 1576592401104,
