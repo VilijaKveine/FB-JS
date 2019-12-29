@@ -1,6 +1,6 @@
 "use strict";
 
-const posts    = [
+const posts = [
     // {
     //     author: {
     //         name: 'John',
@@ -24,7 +24,10 @@ const posts    = [
         },
         time: 1576592401104,
         content: {
-            text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis.'
+            text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis.',
+            background: 'red',
+            img: ['img-1.jpg', 'img-2.jpg', 'img-3.jpg']
+
         }
     },
     {
@@ -152,5 +155,9 @@ const posts    = [
         }
     }
 ];
+console.log(posts);
+
+console.log(posts[1][1]);
+
     
 

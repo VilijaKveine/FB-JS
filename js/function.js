@@ -2,14 +2,13 @@
 
 function renderFeed( list ) {
     if ( Array.isArray(list) === false ) {
-        return console.error('Feeda turi sudaryti sarasas(array) postu objektu (objects).')
+        return console.error ('Feeda turi sudaryti sarasas(array) postu objektu (objects).')
     }
 
     for ( let i=0; i<list.length; i++ ) {
         renderPost( list[i] );
     }
-    
-    return;
+
 }
 
 function renderPost( data ) {
@@ -20,43 +19,49 @@ function renderPost( data ) {
                 </div>`;
     
     document.getElementById('feed').innerHTML += HTML;
-    return;
+
 }
 
-function renderPostHeader(data) {
+function renderPostHeader( data ) {
     return `<header>
-                <a href="#" class="user-image"
+                <a href="#" class="user-image">
                  <img src="./img/users/${data.author.img}" alt ="User photo">
                  </a>
                     <div class="texts">
                         <div class="author">
-                            <a href="#">${data.author.img} ${data.author.surname}></a>
+                            <a href="#">${data.author.name} ${data.author.surname}</a>
                      </div>
                      <span class="time">${data.time}</span>
                     </div>
-         <i class="fa fa-ellipsis-h "></i>
+         <i class="fa fa-ellipsis-h"></i>
     </header>`;
 }
 
-function renderPostContent(content) {
-    let textHTML = "";
-    let galleryHTML = "";
+function renderPostContent( content ) {
+    let textHTML = '';
+    let galleryHTML = '';
 
-    if (content.text) {
-        textHTML = renderGallery(content.img)
+    if ( content.text ) {
+        textHTML = renderPostText( content );
     }
+  
+    if ( content.img ) {
+       galleryHTML = renderGallery( content.img );
+
+    }
+
     return `<div class="content">
         ${textHTML}
         ${galleryHTML}
     </div>`;
 }
 
-function renderPostText (content) {
+function renderPostText ( content ) {
     let HTML  = '';
     let text = '';
     let more = '';
     const shortTextLenght = 60;
-    const textVisibleLength = 350;
+    const textVisibleMaxLength = 350;
     const textMaxLength = 450;
 
     let textClass = '';
@@ -67,21 +72,22 @@ function renderPostText (content) {
             }
         if  (content.background && 
             !content.img) {
-                textClass += 'background' + content.background;
+                textClass += ' background ' + content.background;
             }
+
             text = content.text;
-            if (text.length > textMaxLength){
-                text = text.silice(0, textVisibleMaxLength);
+            if ( text.length > textMaxLength ) {
+                text = text.slice(0, textVisibleMaxLength);
 
                 let letterRemove = 0;
-                for (let i=textVisibleMaxLength-1; i>=0; i--){
+                for ( let i=textVisibleMaxLength-1; i>=0; i-- ){
                     const letter = text[i];
                     if (letter === '') {
                         break;
                     }
                     letterRemove++;
                 }
-                if (letterRemove !== textVisibleMaxLength) {
+                if ( letterRemove !== textVisibleMaxLength ) {
                     text = text.slice(0, -letterRemove-1);
                 }
                 more=`...<span class="more">See more</span>`
@@ -97,7 +103,7 @@ function renderPostFooter() {
     return `<footer>
                 <div class="row">
                     <div class="action">
-                        <i class=" fa fa-thumbs-o-up></i>
+                        <i class="fa fa-thumbs-o-up"></i>
                         <span>Like</span>
                     </div>
                     <div class="action">
@@ -106,7 +112,7 @@ function renderPostFooter() {
                     </div>
                 </div>
                 <div class="row">
-                    <img class="user-photo"  src="./img/users/Boy.png alt="User photo">
+                    <img class="user-photo"  src="./img/users/Boy.png" alt="User photo">
                     <form>
                         <textarea></textarea>
                         <div class="actions">
@@ -132,6 +138,6 @@ function renderGallery( list ) {
     if ( list.length> size ){
         HTML += `<div class="overlay">+${list.length - maxImages}</div>`;
     }
-    return `class="gallery gallery-${size}">${HTML}</div>`;
+    return `<div class="gallery gallery-${size}">${HTML}</div>`;
 }
 
