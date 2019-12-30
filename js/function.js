@@ -8,7 +8,6 @@ function renderFeed( list ) {
     for ( let i=0; i<list.length; i++ ) {
         renderPost( list[i] );
     }
-
 }
 
 function renderPost( data ) {
@@ -41,37 +40,36 @@ function renderPostContent( content ) {
     let textHTML = '';
     let galleryHTML = '';
 
-    if ( content.text ) {
+    if( content.text ) {
         textHTML = renderPostText( content );
     }
-  
-    if ( content.img ) {
-       galleryHTML = renderGallery( content.img );
 
+    if ( content.img ) {
+        galleryHTML = renderGallery( content.img );
     }
 
     return `<div class="content">
-        ${textHTML}
-        ${galleryHTML}
-    </div>`;
+                ${textHTML}
+                ${galleryHTML}
+            </div>`;
 }
 
-function renderPostText ( content ) {
-    let HTML  = '';
-    let text = '';
-    let more = '';
-    const shortTextLenght = 60;
-    const textVisibleMaxLength = 350;
-    const textMaxLength = 450;
+    function renderPostText( content ) {
+        let HTML = '';
+        let text = '';
+        let more = '';
+        const shortTextLenght = 60;
+        const textVisibleMaxLength = 350;
+        const textMaxLength = 450;
 
-    let textClass = '';
-    if (content.text) {
-        if (content.text.length <=shortTextLenght &&
-            !content.img){
+        let textClass = '';
+        if ( content.text ) {
+            if (content.text.length <= shortTextLenght &&
+            !content.img) {
                 textClass = `big-text`;
             }
-        if  (content.background && 
-            !content.img) {
+        if  ( content.background && 
+            !content.img ) {
                 textClass += ' background ' + content.background;
             }
 
@@ -80,9 +78,9 @@ function renderPostText ( content ) {
                 text = text.slice(0, textVisibleMaxLength);
 
                 let letterRemove = 0;
-                for ( let i=textVisibleMaxLength-1; i>=0; i-- ){
+                for ( let i=textVisibleMaxLength-1; i>=0; i-- ) {
                     const letter = text[i];
-                    if (letter === '') {
+                    if ( letter === ' ' ) {
                         break;
                     }
                     letterRemove++;
@@ -92,6 +90,7 @@ function renderPostText ( content ) {
                 }
                 more=`...<span class="more">See more</span>`
             }
+
             HTML = `<p class="${textClass}">
                         ${text}${more}
                         </p>`;
@@ -129,13 +128,13 @@ function renderGallery( list ) {
     let HTML = '';
     const maxImages = 4;
     let size = list.length;
-    if (size > maxImages ) {
+    if ( size > maxImages ) {
         size = maxImages;
     }
     for ( let i=0; i<size; i++ ) {
         HTML += `<img src="./img/posts/${list[i]}">`;
     }
-    if ( list.length> size ){
+    if ( list.length> size ) {
         HTML += `<div class="overlay">+${list.length - maxImages}</div>`;
     }
     return `<div class="gallery gallery-${size}">${HTML}</div>`;

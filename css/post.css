@@ -63,14 +63,16 @@
         .post > .content > p {
             display: inline-block;
             width: 100%;
-            padding: 10px;
+            padding: 10px;            
             line-height: 25px;
-            font-size: 18px;
+            font-size: 20px;
             position: relative;
         }
             .post > .content > p.big-text {
                 font-size: 40px;
                 line-height: 55px;
+                
+
             }
             .post > .content > p.background {
                 display: flex;
@@ -78,13 +80,15 @@
                 justify-content: center;
                 text-align: center;
                 height: 320px;
+
             }
-            .post > .content > p.blue {
+        
+            .post > .content > p.blue{
                 background-color: #36f;
                 color: #fff;
             }
             .post > .content > p.red {
-                background-color: #f33;
+                background-color:#f33;
                 color: #fff;
             }
             .post > .content > p > .more {

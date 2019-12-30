@@ -25,7 +25,6 @@ const posts = [
         time: 1576592401104,
         content: {
             text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis.',
-            background: 'red',
             img: ['img-1.jpg', 'img-2.jpg', 'img-3.jpg']
 
         }
@@ -129,8 +128,9 @@ const posts = [
         time: 1576592401104,
         content: {
             text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-            background: 'red'
-        },
+        }
+    },
+    {
         author: {
             name: 'Tim',
             surname: 'Dear',
@@ -141,7 +141,9 @@ const posts = [
         content: {
             text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
             background: 'blue'
-        },
+    }
+    },
+        {
         author: {
             name: 'Boy',
             surname: 'Dear',
