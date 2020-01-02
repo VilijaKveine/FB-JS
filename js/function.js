@@ -1,7 +1,7 @@
 "use strict";
 
 function getPost( callback ) {
-    const API = '';
+    const API = 'https://vilijakveine.github.io/FB-JS/js/posts.json';
 
     // darome uzklausa gauti duomenis
     var xhttp = new XMLHttpRequest();
