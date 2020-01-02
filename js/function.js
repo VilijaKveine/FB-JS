@@ -1,5 +1,19 @@
 "use strict";
 
+function getPost( callback ) {
+    const API = '';
+
+    // darome uzklausa gauti duomenis
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            // gavus atsakyma i uzklausa, duomenis perduodame callback'ui
+            callback(JSON.parse(xhttp.responseText));
+        }
+};
+    xhttp.open("GET", API, true);
+    xhttp.send();
+}
 function renderFeed( list ) {
     if ( Array.isArray(list) === false ) {
         return console.error ('Feeda turi sudaryti sarasas(array) postu objektu (objects).')
@@ -85,6 +99,7 @@ function renderPostContent( content ) {
                     }
                     letterRemove++;
                 }
+                 
                 if ( letterRemove !== textVisibleMaxLength ) {
                     text = text.slice(0, -letterRemove-1);
                 }
@@ -139,4 +154,48 @@ function renderGallery( list ) {
     }
     return `<div class="gallery gallery-${size}">${HTML}</div>`;
 }
+function formatDate( timestamp ) {
+    const now = Date.now();
+    let seconds = Math.floor((now - timestamp) / 1000);
 
+    // Just now         -> 0..15s
+    if ( seconds < 16 ) {
+        return 'Just now';
+    }
+
+    // [x]sec           -> 16..59s
+    if ( seconds < 60 ) {
+        return seconds+'s ago';
+    }
+
+    // [x]min           -> 1..59min
+    const minutes = (seconds - (seconds%60)) / 60;
+    if ( minutes < 60 ) {
+        return minutes+'min ago';
+    }
+
+    // [x]h             -> 1..23h
+    const hours = (minutes - (minutes%60)) / 60;
+    if ( hours < 24 ) {
+        return hours+'h ago';
+    }
+
+    // [x]days          -> 1..6 days
+    const days = (hours - (hours%24)) / 24;
+    if ( days < 7 ) {
+        return days+'days ago';
+    }
+
+    // [x]weeks         -> 7..27
+    if ( days < 28 ) {
+        return Math.floor(days/7)+'weeks ago';
+    }
+
+    // [x]months        -> 28..365
+    if ( days < 366 ) {
+        return Math.floor(days/30.45)+'weeks ago';
+    }
+
+    // [x]years         -> 366..Infinity
+    return Math.floor(days/365.25)+'years ago';
+}

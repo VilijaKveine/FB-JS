@@ -1,20 +1,6 @@
 "use strict";
 
 const posts = [
-    // {
-    //     author: {
-    //         name: 'John',
-    //         surname: 'Dear',
-    //         img: 'john-dear.jpg',
-    //         link:'#' 
-    //     },
-    //     time: 1559846846,
-    //     content: {
-    //         text: 'Lorem ipsum dolor sit amet...',
-    //          background: 'red',
-    //          img: ['img-1.jpg', 'img-2.png', 'img-3.jpg']
-    //     }
-    // },
     {
         author: {
             name: 'Boy',
