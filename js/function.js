@@ -44,7 +44,7 @@ function renderPostHeader( data ) {
                         <div class="author">
                             <a href="#">${data.author.name} ${data.author.surname}</a>
                      </div>
-                     <span class="time">${data.time}</span>
+                     <span class="time">${formatDate(data.time)}</span>
                     </div>
          <i class="fa fa-ellipsis-h"></i>
     </header>`;
@@ -157,7 +157,12 @@ function renderGallery( list ) {
 function formatDate( timestamp ) {
     
     const now = Date.now();
+
+    // console.log(now - timestamp);
+    
     let seconds = Math.floor((now - timestamp) / 1000);
+    //   console.log(seconds);
+      
 
     // Just now         -> 0..15s
     if ( seconds < 16 ) {
@@ -200,6 +205,5 @@ function formatDate( timestamp ) {
     // [x]years         -> 366..Infinity
     return Math.floor(days/365.25)+'years ago';
 }
-console.log(formatDate)
-console.log(Date.now);
+
 
