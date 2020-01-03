@@ -1,6 +1,6 @@
 "use strict";
 
-function getPost( callback ) {
+function getPosts( callback ) {
     const API = 'https://vilijakveine.github.io/FB-JS/js/posts.json';
 
     // darome uzklausa gauti duomenis
@@ -155,6 +155,7 @@ function renderGallery( list ) {
     return `<div class="gallery gallery-${size}">${HTML}</div>`;
 }
 function formatDate( timestamp ) {
+    
     const now = Date.now();
     let seconds = Math.floor((now - timestamp) / 1000);
 
@@ -199,3 +200,6 @@ function formatDate( timestamp ) {
     // [x]years         -> 366..Infinity
     return Math.floor(days/365.25)+'years ago';
 }
+console.log(formatDate)
+console.log(Date.now);
+
